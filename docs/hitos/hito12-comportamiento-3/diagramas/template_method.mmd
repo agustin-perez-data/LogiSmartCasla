@@ -1,0 +1,12 @@
+classDiagram
+    class ProcesoProcesosEnvio {
+      <<abstract>>
+      procesarEnvio(Envio)
+      validar(Envio)
+      calcularCosto(Envio)
+      procesarPago(Envio)
+      notificar(Envio)
+    }
+    ProcesoProcesosEnvio <|-- ProcesoNacional
+    ProcesoProcesosEnvio <|-- ProcesoInternacional
+    ProcesoProcesosEnvio <|-- ProcesoUrgente

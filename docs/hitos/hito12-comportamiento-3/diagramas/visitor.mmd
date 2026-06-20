@@ -1,0 +1,18 @@
+classDiagram
+    class VisitorCentro {
+      <<interface>>
+      visitar(PuntoEntrega)
+      visitar(CentroRegional)
+    }
+    class CentroDistribucion {
+      <<interface>>
+      aceptar(VisitorCentro)
+      obtenerNombre()
+    }
+    CentroDistribucion <|.. PuntoEntrega
+    CentroDistribucion <|.. CentroRegional
+    CentroRegional o--> CentroDistribucion
+    VisitorCentro <|.. VisitorCalculoOcupacion
+    VisitorCentro <|.. VisitorGeneradorReporte
+    VisitorCentro <|.. VisitorCalculoCostoOperativo
+    VisitorCentro <|.. VisitorBusquedaPuntosCriticos

@@ -1,0 +1,13 @@
+classDiagram
+    class Envio
+    class EstrategiaCalculoCosto {
+      <<interface>>
+      calcular(Envio)
+      obtenerNombre()
+    }
+    Envio --> EstrategiaCalculoCosto
+    EstrategiaCalculoCosto <|.. EstrategiaDistancia
+    EstrategiaCalculoCosto <|.. EstrategiaPeso
+    EstrategiaCalculoCosto <|.. EstrategiaUrgencia
+    EstrategiaCalculoCosto <|.. EstrategiaVolumen
+    EstrategiaCalculoCosto <|.. EstrategiaHibrida

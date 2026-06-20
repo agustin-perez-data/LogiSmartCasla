@@ -1,0 +1,18 @@
+classDiagram
+    class Envio
+    class EstadoEnvio {
+      <<interface>>
+      validar(Envio)
+      entregar(Envio)
+      cancelar(Envio)
+      retener(Envio)
+      devolver(Envio)
+      reclamar(Envio)
+    }
+    Envio --> EstadoEnvio
+    EstadoEnvio <|.. EstadoConfirmado
+    EstadoEnvio <|.. EstadoEnTransito
+    EstadoEnvio <|.. EstadoEnReparto
+    EstadoEnvio <|.. EstadoEntregado
+    EstadoEnvio <|.. EstadoRetenido
+    EstadoEnvio <|.. EstadoCancelado
